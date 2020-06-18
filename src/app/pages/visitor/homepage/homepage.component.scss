@@ -1,0 +1,70 @@
+@import "../../../shared/variables.scss";
+
+// Main container
+
+.container {
+  background-image: url(../../../../assets/images/homepage.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-direction: row;
+}
+
+// Logo
+
+.container_image {
+  width:80%;
+  align-items: flex-start;
+  height:100%;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.button_three {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+}
+
+.button_concept {
+  width: 100%;
+  height:250px;
+  background-color:rgba(174, 205, 107);
+  font-size: 2rem;
+  font-family: amarillo;
+
+}
+.container_concept {
+  width:100%;
+  display: -webkit-box
+}
+
+.container_login {
+  width:100%;
+  display: -webkit-box
+}
+
+.button_service {
+  width: 100%;
+  height:250px;
+  background-color:rgba(49, 104, 39);
+  font-size: 2rem;
+  font-family: amarillo;
+
+}
+
+.button_connect {
+  width: 100%;
+  height:250px;
+  background-color: rgba(196, 2, 25);
+  font-size: 2rem;
+  font-family: amarillo;
+}
+

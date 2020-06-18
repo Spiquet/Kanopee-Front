@@ -1,0 +1,50 @@
+<div id="navbar-container">
+  <ul>
+    <li>
+      <a class="nav_a" [routerLink]="['/accueil']" routerLinkActive="router-link-active">ACCUEIL</a>
+    </li>
+    <li>
+      <a class="nav_a" [routerLink]="['/conception']" routerLinkActive="router-link-active">CONCEPTION ET IMPLANTATION</a>
+    </li>
+    <li>
+      <a class="nav_a" [routerLink]="['/entretien']" routerLinkActive="router-link-active">ENTRETIEN ET CULTURE</a>
+    </li>
+    <li>
+      <a class="nav_a" [routerLink]="['/accompagnement']" routerLinkActive="router-link-active">ACCOMPAGNEMENT</a>
+    </li>
+    <li>
+      <a class="nav_a" [routerLink]="['/services']" routerLinkActive="router-link-active">SERVICES</a>
+    </li>
+    <li>
+      <a class="nav_a" [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
+    </li>
+  </ul>
+  <img src="../../../../../assets/images/PETITBOUTTON.png">
+  <div class="mobile-menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a  [routerLink]="['/accueil']" routerLinkActive="burger-link-active" mat-menu-item>Accueil</a >
+      <a [routerLink]="['/conception']" routerLinkActive="burger-link-active" mat-menu-item>Conception</a>
+      <a [routerLink]="['/entretien']" routerLinkActive="burger-link-active" mat-menu-item>Entretien</a>
+      <a [routerLink]="['/accompagnement']" routerLinkActive="burger-link-active" mat-menu-item>Accompagnement</a>
+      <a [routerLink]="['/contact']" routerLinkActive="burger-link-active" mat-menu-item>Contact</a>
+    </mat-menu>
+  </div>
+
+  <div class="container">
+    <div class="button" id="button-5">
+      <div id="translate"></div>
+      <a class="connect" [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
+    </div>
+  </div>
+
+
+  <!-- <div class="conexion-btn">
+    <mat-chip-list aria-label="Fish selection">
+      <button class="connect"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a></button>
+    </mat-chip-list>
+
+  </div> -->
+</div>

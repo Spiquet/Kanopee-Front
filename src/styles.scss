@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+body { background-color: rgb(245, 247, 244); margin: 0; font-family: avenirNext, Roboto, "Helvetica Neue", sans-serif; color: #523603}
+
+@font-face {
+  font-family: avenirNext;
+  src: url(assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: amarillo;
+  src: url(assets/fonts/Amarillo.otf) format("opentype");
+}
+
+@font-face {
+  font-family: falkin;
+  src: url(assets/fonts/FalkinSansPERSONAL.ttf) format("opentype");
+}
+
+

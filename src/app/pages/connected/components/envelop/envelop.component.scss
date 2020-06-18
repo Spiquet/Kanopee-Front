@@ -1,0 +1,40 @@
+@import "../../../../shared/variables.scss";
+
+// Container de la card
+.container-card {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width:90%;
+}
+
+// en tête de la card
+.header-card{
+  justify-content: space-between;
+}
+
+// Card
+.card {
+  border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-bottom: 2%;
+}
+
+// Titre de l'atelier
+.workshoptitle {
+  font-family: avenir-next;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $brown;
+}
+
+// Paragraphe description
+p {
+  font-size:1.2rem;
+  font-family: avenir next;
+  font-style: italic;
+}
+

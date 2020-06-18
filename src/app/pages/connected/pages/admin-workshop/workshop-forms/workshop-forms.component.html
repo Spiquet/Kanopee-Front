@@ -1,0 +1,202 @@
+<form [formGroup]="buildForm"
+(ngSubmit)="onFormSubmit()"
+method="post"
+action="/file"
+enctype="multipart/form-data"
+class="container">
+
+  <div class="title2">
+    <h2>NOUVEL ATELIER</h2>
+      <mat-icon (click)="closeForm()" class="close_dialog">close</mat-icon>
+  </div>
+
+
+  <!-- premiere ligne -->
+  <div class="Line">
+
+      <mat-form-field class="field-width">
+        <input
+        type="text"
+        formControlName="title"
+        matInput placeholder="Nom de l'atelier"
+        [ngClass]="{ 'is-invalid': formSubmitted && f.title.errors }">
+      </mat-form-field>
+
+      <mat-error *ngIf="formSubmitted && f.title.errors">
+        <span *ngIf="f.title.errors.required">
+          Le nom de l'atelier est requis
+        </span>
+      </mat-error>
+
+
+      <mat-form-field class="field-width">
+        <input
+        type="number"
+        formControlName="duration"
+        matInput placeholder="Durée de l'atelier"
+        [ngClass]="{ 'is-invalid': formSubmitted && f.duration.errors }">
+      </mat-form-field>
+      <mat-error *ngIf="formSubmitted && f.duration.errors">
+        <span *ngIf="f.duration.errors.required">
+          La durée de l'atelier est requise
+        </span>
+      </mat-error>
+
+  </div>
+
+
+  <!-- Deuxieme ligne  -->
+  <div class="Line">
+    <!-- Description + erreur  -->
+    <mat-form-field class="field-widthh">
+      <input
+      type="text"
+      formControlName="description"
+      matInput placeholder="Description"
+      [ngClass]="{ 'is-invalid': formSubmitted && f.description.errors }">
+    </mat-form-field>
+
+    <mat-error *ngIf="formSubmitted && f.description.errors">
+      <span *ngIf="f.description.errors.required">
+        Une description de l'atelier est requise
+      </span>
+    </mat-error>
+
+  </div>
+
+  <!-- Troisieme Ligne -->
+  <div class="Line">
+    <!-- Lien1 + erreur  -->
+    <mat-form-field class="field-width">
+      <input
+      type="url"
+      formControlName="link1"
+      matInput placeholder="Liens utiles"
+      [ngClass]="{ 'is-invalid': formSubmitted && f.link2.errors }">
+    </mat-form-field>
+
+    <mat-error *ngIf="formSubmitted && f.link2.errors">
+      <span *ngIf="f.link2.errors.required">
+        Le lien est requis
+      </span>
+    </mat-error>
+
+    <!-- Lien2 + erreur  -->
+    <mat-form-field class="field-width">
+      <input
+      type="url"
+      formControlName="link2"
+      matInput placeholder="Liens utiles"
+      [ngClass]="{ 'is-invalid': formSubmitted && f.link1.errors }">
+    </mat-form-field>
+
+    <mat-error *ngIf="formSubmitted && f.link1.errors">
+      <span *ngIf="f.link1.errors.required">
+        Le lien est requis
+      </span>
+    </mat-error>
+
+    <mat-form-field class="field-width">
+      <input
+      type="url"
+      formControlName="link3"
+      matInput placeholder="Liens utiles"
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="Line">
+    <mat-form-field class="field-width">
+      <input
+      type="url"
+      formControlName="link4"
+      matInput placeholder="Liens utiles"
+      >
+    </mat-form-field>
+
+    <mat-form-field class="field-width">
+      <input
+      type="url"
+      formControlName="link5"
+      matInput placeholder="Liens utiles"
+      >
+    </mat-form-field>
+
+    <mat-form-field class="field-width">
+      <input
+      type="url"
+      formControlName="link6"
+      matInput placeholder="Liens utiles"
+      >
+    </mat-form-field>
+  </div>
+
+
+
+
+  <!-- bouton Import -->
+  <div>
+    <!-- Boutton1 import de fichier + erreur  -->
+    <input
+    style="display:none"
+    formControlName="importOne"
+    type="file" accept=".pdf"
+    (change)="onFileSelect($event, 'user')"
+    #file1>
+
+    <button
+    type="button"
+    (click)="file1.click()"
+    [ngClass]="{ 'is-invalid': formSubmitted && f.importOne.errors }">
+    Importer le support Kulteur
+    </button>
+    <div *ngIf="fileName">
+      {{fileName}}
+    </div>
+
+
+
+    <mat-error *ngIf="formSubmitted && f.importOne.errors">
+      <span *ngIf="f.importOne.errors.required">
+        Le fichier sous format PDF est requis
+      </span>
+    </mat-error>
+
+    <!-- Boutton2 import de fichier + erreur  -->
+    <input
+    style="display:none"
+    formControlName="importTwo"
+    type="file" accept=".pdf"
+    (change)="onFileSelect($event, 'kulteur')"
+    #file2>
+
+    <button
+    type="button"
+    (click)="file2.click()"
+    [ngClass]="{ 'is-invalid': formSubmitted && f.importTwo.errors }"
+    >
+    Importer le support Diffusion
+    </button>
+    <div *ngIf="fileName">
+      {{fileName}}
+    </div>
+
+    <mat-error *ngIf="formSubmitted && f.importTwo.errors">
+      <span *ngIf="f.importTwo.errors.required">
+        Le fichier sous format PDF est requis
+      </span>
+    </mat-error>
+
+  </div>
+
+  <!-- Validation et reset du formulaire  -->
+  <div>
+    <button type="submit">{{libelle}}</button>
+
+    <button type="button" (click)="onReset()">Reset</button>
+  </div>
+
+</form>
+
+
+

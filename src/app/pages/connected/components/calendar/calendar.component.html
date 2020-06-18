@@ -1,0 +1,239 @@
+<link href="https://unpkg.com/angular-calendar@0.28.1/css/angular-calendar.css" rel="stylesheet">
+<link href="https://unpkg.com/flatpickr@4.6.3/dist/flatpickr.css" rel="stylesheet">
+
+<div *ngIf="user.role === 'admin'" [ngClass]="popupAddDescription ? 'popupAddDescriptionEvent'  : 'danger'" class="popupEventDisable">
+  <div [ngClass]="popupAddDescription ? 'intoPopupAddDescription'  : 'danger'" class="popupEventDisable">
+    <div class="positionBtnCloseDescription">
+      <mat-icon (click)="openPopupDesciption()" class="close_dialog">close</mat-icon>
+    </div>
+    <h2>Ajoutez une description :</h2>
+    <textarea type="text" class="form-control" rows="5" cols="53" [(ngModel)]="description"
+      (keyup)="refresh.next()"></textarea>
+    <br>
+    <br>
+    <div class="button buttonSelectEdit" id="button-5" (click)="addDescriptionEvent(description)">
+      <div id="translate"></div>
+      <p class="paragrapheBtn">
+        Validé
+      </p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedKulteur !== undefined" [ngClass]="popupEvent ? 'popupCreateEvent'  : 'danger'"
+  class="popupEventDisable">
+  <mat-card class="intoPopupEvent">
+    <div class="optionInPopup">
+      <h3>Agenda</h3>
+      <div class="button buttonSelectEdit positionBtnAddEvent" id="button-5" (click)="addEvent()">
+        <div id="translate"></div>
+        <p class="paragrapheBtn">
+          Ajoutez Evènement
+        </p>
+      </div>
+      <div class="positionBtnClose">
+      <mat-icon (click)="popupCreateEvent()" class="close_dialog">close</mat-icon>
+    </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Tache</th>
+            <th>Description / Atelier</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th>Validé Date</th>
+            <th>Nom du site</th>
+            <th>Supprimmer</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let event of calendarEvents; let i = index">
+            <td>
+              <div class="button buttonSelectEdit" id="button-5">
+                <div id="translate"></div>
+                <mat-form-field>
+                  <mat-label> {{ event.title }} </mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let type of tableTitle" [value]="type" (click)="addTypeAtEvent(event.id, event, type)">
+                      <p class="paragrapheBtn">{{ type }}</p>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+            <td *ngIf="event.meta.eventType === 'Atelier'">
+              <div class="button buttonSelectEdit" id="button-5">
+                <div id="translate"></div>
+                <mat-form-field>
+                  <mat-label> {{ event.meta.atelier.title }} </mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let workshop of atelier" [value]="workshop.title"
+                      (click)="addAtelierAtEvent(event.id, event, workshop)">
+                      <p class="paragrapheBtn">{{workshop.title}}</p>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+            <td *ngIf="event.meta.eventType !== 'Atelier'">
+              <button mat-button class="btnAddDescription" (click)="openPopupDesciption(event)">Ajouter description</button>
+            </td>
+            <td>
+              <input class="form-control" type="date" mwlFlatpickr [(ngModel)]="event.start"
+                (ngModelChange)="refresh.next(event.start)" [altInput]="true"
+                [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="j F, Y H:i K"
+                placeholder="Not set" />
+            </td>
+            <td>
+              <input class="form-control" type="date" mwlFlatpickr [(ngModel)]="event.end"
+                (ngModelChange)="refresh.next(event.end)" [altInput]="true"
+                [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="j F, Y H:i K"
+                placeholder="Not set" />
+            </td>
+            <td>
+              <div class="button" id="button-5" (click)="refresh.next(modifyEventStart(event.id, event))">
+                <div id="translate"></div>
+              <p class="paragrapheBtn">ok</p>
+            </div>
+            </td>
+            <td>
+              <div class="button buttonSelectEdit" id="button-5">
+                <div id="translate"></div>
+                <mat-form-field>
+                  <mat-label> {{ event.meta.site.name }} </mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let site of allSite" [value]="site.name" (click)="addSiteAtEvent(event.id, event, site)">
+                      <p class="paragrapheBtn">{{ site.name }}</p>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </td>
+            <td>
+              <button class="btn" (click)="deleteEvent(event.id)"><mat-icon>delete_forever</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+</div>
+
+<div class="row text-center positionBtn">
+  <div class="col-md-4 positionResponsive">
+    <div class="btn-group positionBtnLeft">
+      <div class="pointerBtnNext button" id="button-5" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+      [excludeDays]="excludeDays" (viewDateChange)="closeOpenMonthViewDay()">
+        <div id="translate"></div>
+        <p *ngIf="view != CalendarView.Day" class="paragrapheBtn"> Semaine précédente </p>
+        <p *ngIf="view === CalendarView.Day" class="paragrapheBtn"> Jour précédent </p>
+      </div>
+      <div class="pointerBtnNext button" id="button-5" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+      [excludeDays]="excludeDays" (viewDateChange)="closeOpenMonthViewDay()">
+        <div id="translate"></div>
+        <p *ngIf="view != CalendarView.Day" class="paragrapheBtn"> Semaine suivante </p>
+        <p *ngIf="view === CalendarView.Day" class="paragrapheBtn"> Jour <br> suivant </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 postitionResponsiveTitle" *ngIf="view != undefined">
+    <h3 class="titleDate">{{ viewDate | calendarDate:(view + 'ViewTitle'):'fr':weekStartsOn:excludeDays }}</h3>
+  </div>
+  <div class="col-md-4 containerBtnRight" *ngIf="user.role === 'admin'">
+    <div class="btn-group positionBtnRight">
+      <div class="button buttonSelect" id="button-5">
+        <div id="translate"></div>
+        <mat-form-field>
+          <mat-label>Choisir un Kulteur</mat-label>
+          <mat-select [(ngModel)]="selectedKulteur" name="kulteur">
+            <mat-option *ngFor="let kulteur of allKulteur" [value]="kulteur.id"
+              (click)="refreshWithGoodKulteur(selectedKulteur)">
+              <p class="paragrapheBtn">{{kulteur.firstName}}</p>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="button buttonSelect" id="button-5">
+        <div id="translate"></div>
+        <mat-form-field>
+          <mat-label>Choisir un Site</mat-label>
+          <mat-select [(ngModel)]="selectedsite" name="site">
+            <mat-option *ngFor="let site of allSite" [value]="site.id" (click)="refreshWithGoodSite(selectedsite)">
+              <p class="paragrapheBtn">{{site.name}}</p>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br />
+<div [ngSwitch]="view" *ngIf="view != undefined">
+  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="calendarEvents"
+    [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" [locale]="locale" [weekStartsOn]="weekStartsOn"
+    (eventClicked)="handleEvent('Clicked', $event.event)">
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="calendarEvents"
+    [refresh]="refresh" [locale]="locale" [weekStartsOn]="weekStartsOn" [excludeDays]="excludeDays" [dayStartHour]="6"
+    [dayEndHour]="22" (dayHeaderClicked)="dayHeaderClicked($event)"
+    (eventClicked)="handleEvent('Clicked', $event.event)">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="calendarEvents"
+    [refresh]="refresh" [locale]="locale" [dayStartHour]="6" [dayEndHour]="22"
+    (dayHeaderClicked)="dayHeaderClicked($event)" (eventClicked)="handleEvent('Clicked', $event.event)">
+  </mwl-calendar-day-view>
+</div>
+
+
+<br /><br /><br />
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-body">
+    <div *ngIf="modalData?.event.title === 'Atelier'" class="positionModal">
+      <pre><b>L'évènement commencera le :</b><br>{{ modalData?.event.start | date : 'EEEE d MMMM, hh:mm a' : locale : 'fr-FR' }}
+        <br><b>Le kulteur sur place sera :</b><br>{{ modalData?.event.meta.user.firstName }}
+        <br><b>La tache est :</b><br>{{ modalData?.event.title }}
+        <br><b>L'atelier proposé est :</b><br>{{ modalData?.event.meta.atelier.title }}
+        <br><b>L'atelier sera d'une durée de :</b><br>{{ modalData?.event.meta.atelier.duration }} minutes
+        <br><b>Lieu de l'évènement :</b><br>{{ modalData?.event.meta.site.name }}
+        <br><b>Adresse :</b><br>{{ modalData?.event.meta.site.address }}
+        <br>{{ modalData?.event.meta.site.postcode }}  {{ modalData?.event.meta.site.city }}
+        <br><b>L'évènement finira le :</b><br>{{ modalData?.event.end | date : 'EEEE d MMMM, hh:mm a' : locale : 'fr-FR' }}
+        <div class="modal-footer">
+          <div class="pointerBtnNext button" id="button-5" (click)="close()">
+            <div id="translate"></div>
+            <p class="paragrapheBtn">Fermé</p>
+          </div>
+        </div>
+      </pre>
+    </div>
+    <div *ngIf="modalData?.event.title !== 'Atelier'" class="positionModal">
+      <pre><b>L'évènement commencera le :</b><br>{{ modalData?.event.start | date : 'EEEE d MMMM, hh:mm a' : locale : 'fr-FR' }}
+        <br><b>Le kulteur sur place sera :</b><br>{{ modalData?.event.meta.user.firstName }}
+        <br><b>La tache est :</b><br>{{ modalData?.event.title }}
+        <br><b>Description :</b><br>{{ modalData?.event.meta.description }}
+        <br><b>Lieu de l'évènement :</b><br>{{ modalData?.event.meta.site.name }}
+        <br><b>Adresse :</b><br>{{ modalData?.event.meta.site.address }}
+        <br>{{ modalData?.event.meta.site.postcode }}  {{ modalData?.event.meta.site.city }}
+        <br><b>L'évènement finira le :</b><br>{{ modalData?.event.end | date : 'EEEE d MMMM, hh:mm a' : locale : 'fr-FR' }}
+        <div class="modal-footer">
+          <div class="pointerBtnNext button" id="button-5" (click)="close()">
+            <div id="translate"></div>
+            <p class="paragrapheBtn">Fermé</p>
+          </div>
+        </div>
+      </pre>
+    </div>
+  </div>
+</ng-template>
+
+<div class="discussion">
+  <app-messages-list></app-messages-list>
+  <app-questions-list></app-questions-list>
+</div>

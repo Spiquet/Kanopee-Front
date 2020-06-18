@@ -1,0 +1,61 @@
+@import "../../../../shared/variables.scss";
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-weight: bold;
+}
+
+.form-message {
+  width: 50%;
+
+}
+
+button {
+  background-color: $dark-green;
+  border-radius: 50px;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  text-align:center;
+  font-size: 1.1rem;
+  border: 1px solid $light-green;
+
+  margin: 0 10px;
+}
+
+button:hover {
+
+  background-color: $light-green;
+
+}
+
+.messages {
+  margin-top: 1em;
+}
+
+.icon-comment {
+  display: flex;
+  color: $dark-green;
+}
+
+i {
+  margin-right: 1em;
+  color: $pink;
+}
+
+.text-comment {
+  color: #523603;
+}
+
+.date {
+  color: rgb(128, 125, 125);
+  font-size: 0.8em;
+}

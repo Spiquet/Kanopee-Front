@@ -1,0 +1,28 @@
+@import "../../../../../shared/variables.scss";
+
+
+.button_details {
+  // justify-content: center;
+	// // background-color: $pink;
+	// color: white;
+	// width: 200px;
+	// height: 20px;
+	font-size: 1rem;
+	font-weight: bold;
+  align-items: center;
+  font-family: avenir-next;
+  cursor: pointer;
+
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+  font-family: avenir next;
+}
+
+.container_button {
+  display:flex;
+  justify-content: flex-end;
+}
+

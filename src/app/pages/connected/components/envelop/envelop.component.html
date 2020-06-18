@@ -1,0 +1,18 @@
+<div class="container-card">
+  <mat-card class="card">
+    <mat-card-header class="header-card">
+        <mat-card-title class="workshop-title">{{title}}</mat-card-title>
+        <ng-content select="[options]"></ng-content>
+    <mat-card-subtitle *ngIf="subtitle"> Prochain atelier : {{subtitle | date: 'd MMM y, H:mm:ss'}} à {{location}}</mat-card-subtitle>
+        <mat-card-subtitle>Durée de l'atelier : {{details}} min</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <ng-content select="[action]"></ng-content>
+    </mat-card-actions>
+  </mat-card>
+</div>

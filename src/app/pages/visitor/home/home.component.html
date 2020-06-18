@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+<header>
+  <div>
+    <h1 class="title"><span class="falkin-letter">K</span>anopée koncept</h1>
+    <h1 class="subtitle">
+      Permaculture urbaine
+    </h1>
+  </div>
+</header>
+<div class="presentation">
+  <h2>NOTRE VOCATION</h2>
+  <p>
+    Valoriser et optimiser les espaces urbains libres
+    et non-utilisés (espaces verts, esplanades,
+    terrasses, toits), et les rendre
+    productifs de nourriture
+    saine tout en créant du bien-être,
+    du lien social et en favorisant la
+    biodiversité.
+  </p>
+  <h2>QU'EST-CE QUE J'Y GAGNE ?</h2>
+  <div class="img">
+    <img alt="" src="../../../../assets/images/withKKK.png">
+  </div>
+</div>
+
+<div class="projet">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="card-title"> {{card1.title}} </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <p> {{card1.p1}} </p>
+      <p> {{card1.p2}} </p>
+      <p> {{card1.p3}} </p>
+    </mat-card-content>
+
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="card-title"> {{card2.title}} </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <p> {{card2.p1}} </p>
+      <p> {{card2.p2}} </p>
+      <p> {{card2.p3}} </p>
+    </mat-card-content>
+
+
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="card-title"> {{card3.title}} </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <p> {{card3.p1}} </p>
+      <p> {{card3.p2}} </p>
+    </mat-card-content>
+
+  </mat-card>
+</div>
+
+<div class="container">
+  <div class="button" id="button-5">
+    <div id="translate"></div>
+    <a (click)="redirectToContact()">J'y vais !</a>
+  </div>
+</div>
+
+<footer>
+  <h1>Vous souhaitez rejoindre l'équipe
+    <br>
+    des Kanopée Kulteurs ?</h1>
+    <div class="container">
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a (click)="redirectToContact()">C'est parti !</a>
+      </div>
+    </div>
+</footer>
+<hr>
+

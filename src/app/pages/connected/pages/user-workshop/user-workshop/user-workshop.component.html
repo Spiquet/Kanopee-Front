@@ -1,0 +1,25 @@
+<app-envelop [title]="event.atelier.title"
+[description]="event.atelier.description"
+[details]="event.atelier.duration"
+[subtitle]="event.startAt"
+[location]="event.site.address">
+
+  <div options class="nav__cta">
+    <p>10 inscrits</p>
+  </div>
+
+  <!-- contenu dynamique : content -->
+<div action class="button" id="button-5">
+  <div id="translate"></div>
+  <a (click)="register()">J'y vais !</a>
+</div>
+
+</app-envelop>
+
+
+
+
+
+
+
+

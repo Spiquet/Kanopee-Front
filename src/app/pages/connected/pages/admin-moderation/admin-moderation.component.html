@@ -1,0 +1,101 @@
+<app-navbar-connect [user]='user'></app-navbar-connect>
+
+<!-- Search Bar  -->
+<!-- <mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field> -->
+
+<!-- table's container information users -->
+<div class="container_table">
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+      The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let user "> {{user.lastName | uppercase}} </td>
+      </ng-container>
+
+      <!-- FirstName Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> Prénom </th>
+        <td mat-cell *matCellDef="let user" > {{user.firstName}} </td>
+      </ng-container>
+
+      <!-- Date de création Column -->
+      <ng-container matColumnDef="create">
+        <th mat-header-cell *matHeaderCellDef> Inscrit depuis le : </th>
+        <td mat-cell *matCellDef="let user"> {{user?.createdAt | date }}</td>
+      </ng-container>
+
+      <!-- Dernière connexion Column -->
+      <ng-container matColumnDef="lastConnection">
+        <th mat-header-cell *matHeaderCellDef> Dernière connexion le : </th>
+        <td mat-cell *matCellDef="let user"> {{user?.updateAt | date}} </td>
+      </ng-container>
+
+      <!-- email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+      </ng-container>
+
+      <!-- role Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> Rôle </th>
+        <td mat-cell *matCellDef="let user">
+          <mat-select name="userRole" [(ngModel)]="user.role" [compareWith]="comparedRole">
+          <mat-option *ngFor="let role of roles | keyvalue"  [value]="role.value">
+            {{role.value}}
+          </mat-option>
+        </mat-select>
+        </td>
+      </ng-container>
+
+
+      <!-- site Column -->
+        <ng-container matColumnDef="site">
+          <th mat-header-cell *matHeaderCellDef> Site </th>
+          <td mat-cell *matCellDef="let user">
+            {{user.site.name}}
+          </td>
+        </ng-container>
+
+        <!-- isAcivate Column -->
+        <ng-container matColumnDef="isActivate">
+          <th mat-header-cell *matHeaderCellDef> Compte </th>
+          <td mat-cell *matCellDef="let user"> {{user.isActive ? 'Activé' : 'Non Activé'}} </td>
+        </ng-container>
+
+        <!-- modify Column -->
+        <ng-container matColumnDef="modify">
+          <th mat-header-cell *matHeaderCellDef> Éditer </th>
+          <td mat-cell *matCellDef="let user">
+            <button (click)="updateUser(user)"><mat-icon>edit</mat-icon></button>
+          </td>
+        </ng-container>
+
+        <!-- delete Column -->
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> Supprimer </th>
+          <td mat-cell *matCellDef="let user">
+            <button (click)="deleteUser(user.id)"><mat-icon>delete_forever</mat-icon></button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+      <mat-paginator  #paginator
+                [length]="users.length"
+                [pageSize]= "10"
+                [pageSizeOptions]="[ 10 , 25 ]"
+                (page)="generatePaginatorArray($event)"
+                >
+      </mat-paginator>
+
+</div>

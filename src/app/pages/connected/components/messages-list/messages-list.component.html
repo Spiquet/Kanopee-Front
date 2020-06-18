@@ -1,0 +1,12 @@
+<mat-card class="messages-card">
+  <h3>Derniers messages de la communauté</h3>
+  <div *ngFor="let message of messages; let i = index">
+    <app-messages-details *ngIf="i &#60; 3" class="message-content" [message]="message"></app-messages-details>
+  </div>
+  <div class="container">
+    <div class="button" id="button-5">
+      <div id="translate"></div>
+      <a (click)="redirectToCommunity()">Accéder à la communauté</a>
+    </div>
+  </div>
+</mat-card>

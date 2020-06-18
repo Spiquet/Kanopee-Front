@@ -1,0 +1,157 @@
+<app-navbar></app-navbar>
+<div class="register">
+
+  <mat-card>
+    <mat-card-title>Inscription</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+
+          <!-- formControl lastname and error -->
+          <mat-form-field>
+            <input type="text"
+            matInput placeholder="Nom"
+            formControlName="lastName"
+            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+            >
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.lastName.errors">
+            <span *ngIf="f.lastName.errors.required">
+              Veuillez renseigner votre nom de famille.
+            </span>
+          </mat-error>
+
+          <!-- formControl firstName and error  -->
+          <mat-form-field>
+            <input type="text"
+            matInput placeholder="Prénom"
+            formControlName="firstName"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            >
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.firstName.errors">
+            <span *ngIf="f.firstName.errors.required">
+              Veuillez renseigner votre prénom.
+            </span>
+          </mat-error>
+
+          <!-- formControl birthday and error  -->
+          <mat-form-field>
+            <input type="date"
+            matInput placeholder="Date de naissance"
+            formControlName="birth_date"
+            [ngClass]="{ 'is-invalid': submitted && f.birth_date.errors }"
+            >
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.birth_date.errors">
+            <span *ngIf="f.birth_date.errors.required">
+              Veuillez renseigner votre date de naissance.
+            </span>
+          </mat-error>
+
+          <!-- formControl numbers'family and error  -->
+          <mat-form-field>
+            <input type="number"
+            matInput placeholder="Nombre de personnes dans le foyer"
+            formControlName="home"
+            [ngClass]="{ 'is-invalid': submitted && f.home.errors }"
+            >
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.home.errors">
+            <span *ngIf="f.home.errors.required">
+              Veuillez renseigner le nombre de personne.
+            </span>
+          </mat-error>
+
+          <!-- formControl email and error  -->
+          <mat-form-field>
+            <input type="email"
+            matInput placeholder="Adresse mail"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            >
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.email.errors">
+            <span *ngIf="f.email.errors.required">
+              Veuillez renseigner votre email.
+            </span>
+          </mat-error>
+
+          <!-- formControl phone and error  -->
+          <mat-form-field>
+            <input type="phone"
+            matInput placeholder="Téléphone"
+            formControlName="tel"
+            [ngClass]="{ 'is-invalid': submitted && f.tel.errors }"
+            >
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.tel.errors">
+            <span *ngIf="f.tel.errors.required">
+              Veuillez renseigner votre numéro de téléphone.
+            </span>
+          </mat-error>
+
+          <!-- formControl password and error -->
+          <mat-form-field>
+            <input type="password"
+            matInput placeholder="Mot de passe"
+            formControlName="password"
+            [type]="hide ? 'password' : 'text'"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.password.errors">
+            <span *ngIf="f.password.errors.required">
+              Veuillez renseigner un mot de passe valide.
+            </span>
+            <span *ngIf="f.password.errors.minlength">
+              Votre mot de passe doit contenir 6 caractères minimum.
+            </span>
+          </mat-error>
+
+          <!-- formControl confirmPassword and error  -->
+          <mat-form-field>
+            <input type="password"
+            matInput placeholder="Confirmer votre mot de passe"
+            formControlName="confirmPassword"
+            [type]="hide ? 'password' : 'text'"
+            [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+            >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-error *ngIf="submitted && f.password.errors">
+            <span *ngIf="f.password.errors.required">
+              Vous devez confirmer votre mot de passe.
+            </span>
+            <span *ngIf="f.password.errors.mustMatch">
+              Votre mot de passe n'est pas identique.
+            </span>
+          </mat-error>
+        </div>
+
+        <!-- Soumission + back à la page connexion -->
+        <div class="button">
+          <button type="submit" routerLink="/login" class="btn btn-link" mat-button >Revenir</button>
+          <button type="submit" routerLink="/register" class="btn btn-link" mat-button >Inscription</button>
+
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
+
+

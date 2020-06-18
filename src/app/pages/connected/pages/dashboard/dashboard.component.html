@@ -1,0 +1,56 @@
+<app-navbar-connect [user]="user"></app-navbar-connect>
+<div class="content-container">
+  <p>Plus que deux jours pour valider votre panier</p>
+</div>
+<div class="container">
+  <!-- En dur pour le moment mais section intégrer par Akeros -->
+  <h2>A L'HONNEUR CETTE SEMAINE</h2>
+  <div class="products">
+    <mat-card class="card-product product1">
+      <h1>CAROTTE</h1>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a (click)="redirectToProducts()">Voir le produit</a>
+      </div>
+    </mat-card>
+    <mat-card class="card-product product2">
+      <h1>POIVRON ROUGE</h1>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a (click)="redirectToProducts()">Voir le produit</a>
+      </div>
+    </mat-card>
+    <mat-card class="card-product product3">
+      <h1>TOMATE</h1>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a (click)="redirectToProducts()">Voir le produit</a>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="btn-container">
+    <div class="button" id="button-5">
+      <div id="translate"></div>
+      <a (click)="redirectToProducts()">Voir les produits !</a>
+    </div>
+  </div>
+
+  <!-- Fin partie Akeros -->
+
+  <div class="title">
+    <h2>LES PROCHAINS ATELIERS</h2>
+  </div>
+  <div *ngFor="let event of events; let i = index">
+    <app-user-workshop [event]="event" [workshop]="workshop" [site]="site"></app-user-workshop>
+  </div>
+
+  <div class="title">
+    <h2>LES DERNIERS MESSAGES</h2>
+  </div>
+
+  <div class="discussion">
+    <app-messages-list></app-messages-list>
+    <app-questions-list></app-questions-list>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div id="navbar-container">
+  <ul *ngIf="menuBurger === false">
+    <li *ngFor="let link of selectedList">
+      <a [routerLink]="[link[0]]" routerLinkActive="router-link-active"> {{link[1]}} </a>
+    </li>
+  </ul>
+
+  <ul *ngIf="menuBurger === true">
+  <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <li *ngFor="let link of selectedList">
+      <button mat-menu-item><a [routerLink]="[link[0]]" routerLinkActive="router-link-active"> {{link[1]}} </a></button>
+    </li>
+  </mat-menu>
+</ul>
+
+
+
+  <div class="button" id="button-5">
+    <div id="translate"></div>
+
+    <mat-chip-list aria-label="menu">
+      <button class='B' mat-chip [matMenuTriggerFor]="menu"><a>Bonjour {{user.firstName}}</a></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">Déconnexion</button>
+      </mat-menu>
+    </mat-chip-list>
+  </div>
+
+  <div class="button" id="button-5" *ngIf="user.role === 'user'">
+    <div id="translate"></div>
+    <a class="hello"><mat-icon> local_grocery_store</mat-icon>Panier (0)</a>
+  </div>
+</div>
+

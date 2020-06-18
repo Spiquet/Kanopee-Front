@@ -1,0 +1,29 @@
+<app-envelop [title]="workshop.title"
+[description]="workshop.description"
+[details]="workshop.duration">
+
+  <div options class="nav__cta">
+    <a href="http://localhost:3000/{{workshop.userSupport}}"
+    download=""
+      >Support de cours long</a>
+    <a href="http://localhost:3000/{{workshop.kulteurSupport}}"
+    download=""
+     > Support de cours court</a>
+  </div>
+
+  <!-- contenu dynamique : content -->
+  <div action class="content__article">
+    <mat-chip-list aria-label="Fish selection" class="container_button">
+      <mat-chip class="button_details" (click)="modifyWorkshop()"><mat-icon>edit</mat-icon></mat-chip>
+      <mat-chip class="button_details" (click)="deleteWorkshop()"><mat-icon>delete_forever</mat-icon></mat-chip>
+    </mat-chip-list>
+  </div>
+</app-envelop>
+
+
+
+
+
+
+
+

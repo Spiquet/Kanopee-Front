@@ -1,0 +1,64 @@
+@import "../../../../shared/variables.scss";
+
+#navbar-container {
+	width: 100%;
+	height: 4em;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  box-shadow: 6px 6px 6px #c8c8c8;
+  margin-bottom: 3em;
+}
+
+li {
+	display: inline;
+	margin: 0.5em;
+}
+
+a {
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: $brown;
+}
+
+a:hover {
+  text-shadow: 1px 1px 1px $brown;
+}
+
+.router-link-active {
+  text-shadow: 1px 1px 1px $brown;
+}
+
+button {
+  background-color: white;
+  border-radius: 50px;
+  padding: 8px;
+  color: $dark-green;
+  font-weight: bold;
+  text-align:center;
+  font-size: 1.1rem;
+  border: 1px solid $pink;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: $light-green;
+}
+
+
+// Responsive
+
+@media screen and (max-width: 1200px) {
+  #navbar-container {
+    height: 3em;
+  }
+  a {
+    font-size: 1em;
+  }
+.btn {
+    font-size: 1em;
+  }
+}
+

@@ -1,0 +1,18 @@
+<app-navbar-connect [user]='user'></app-navbar-connect>
+
+<div>
+  <h2>Les prochains ateliers</h2>
+</div>
+<div *ngFor="let event of events; let i = index">
+  <app-user-workshop [event]="event"
+  [workshop]="workshop"
+  [site]="site"></app-user-workshop>
+</div>
+
+<mat-paginator  #paginator
+                [length]="events.length"
+                [pageSize]= "10"
+                [pageSizeOptions]="[5, 10 , 25, 100]"
+                (page)="generatePaginatorArray($event)"
+                >
+</mat-paginator>

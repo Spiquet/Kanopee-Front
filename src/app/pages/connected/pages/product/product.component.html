@@ -1,0 +1,62 @@
+<app-navbar-connect [user]="user"></app-navbar-connect>
+<div class="container">
+  <div class="seraching">
+    <i class="fas fa-search"></i>
+    <mat-form-field class="search-form">
+      <input matInput placeholder="Rechercher">
+    </mat-form-field>
+    <div class="button" id="button-5">
+      <div id="translate"></div>
+      <a class="hello">Filtre</a>
+    </div>
+  </div>
+  <div class="cards">
+    <mat-card class="card" *ngFor="let product of products">
+      <div class="presentation">
+        <img src="{{product.imgUrl}}" alt="photo du produit">
+        <div class="text-presentation">
+          <h2> {{product.title}} </h2>
+          <p> {{product.description}} </p>
+          <p>Fournisseur: {{product.provider}} </p>
+        </div>
+      </div>
+      <h3 class="distance"> {{product.km}} Km </h3>
+      <!-- Fin de la carte pour le consommateur -->
+      <div *ngIf="user.role === 'user'" class="buy">
+        <mat-form-field>
+          <input type="number" matInput placeholder="Quantité souhaitée">
+        </mat-form-field>
+        <div class="price">
+          <p>prix TTC</p>
+          <p> {{product.publicPrice}} Euros</p>
+        </div>
+        <div class="button" id="button-5">
+          <div id="translate"></div>
+          <a class="hello">Ajouter au panier</a>
+        </div>
+      </div>
+      <!-- fin de la carte pour l'admin -->
+      <div class="buy" *ngIf="user.role === 'admin'">
+        <div class="all-prices">
+          <div class="prices">
+            <div>
+              <p>prix Achat</p>
+              <p> {{product.BoughtPrice}} Euros</p>
+            </div>
+            <div>
+              <p>prix Vente</p>
+              <p> {{product.publicPrice}} Euros</p>
+            </div>
+          </div>
+          <div>
+            <p>(Marge: {{product.publicPrice - product.BoughtPrice}} Euros)</p>
+          </div>
+        </div>
+        <div class="button" id="button-5">
+          <div id="translate"></div>
+          <a class="hello">Modifier produit</a>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

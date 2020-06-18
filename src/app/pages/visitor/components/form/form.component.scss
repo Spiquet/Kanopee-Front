@@ -1,0 +1,73 @@
+@import "../../../../shared/variables.scss";
+
+.card-m-3 {
+	align-items: center;
+  text-align: center;
+  color: $brown;
+  font-family: avenir next;
+}
+
+.form-control {
+	height: 30px;
+	width: 80%;
+  margin-bottom: 2%;
+  font-family: avenir next;
+}
+
+.form-control-message {
+	height: 80px;
+  width: 80%;
+  font-family: avenir next;
+}
+
+.form-check-input {
+	margin-bottom: 2%;
+  margin-top: 2%;
+  font-family: avenir next;
+}
+
+.buttons {
+	display: flex;
+	margin: auto;
+  justify-content: space-evenly;
+  cursor: pointer;
+  font-family: avenir next;
+}
+
+button:hover{
+  background-color: $light-green;
+}
+
+.button {
+	background-color: $dark-green;
+	border-radius: 50px;
+	padding: 8px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1rem;
+  border: 1px solid $light-green;
+  cursor: pointer;
+  font-family: avenir next;
+}
+
+a {
+  text-decoration: none;
+  color: $brown;
+  font-family: avenir next;
+}
+
+// Responsive
+
+// Small desktop
+@media screen and (max-width: 1200px) {
+  .form-control {
+    width: 90%;
+  }
+  .form-control-message {
+    width: 90%
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+}

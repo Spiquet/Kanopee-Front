@@ -1,0 +1,109 @@
+@import "../../../shared/variables.scss";
+
+//VERSION DESKTOP
+
+
+//Header
+.header{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  url('/../assets/images/contact.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40%;
+  font-family: avenir next;
+}
+
+h1 {
+  color:white;
+  text-align:center;
+  margin: 0 auto;
+  font-family: avenir next;
+  font-size: 3rem;
+}
+
+h2 {
+  color: $brown;
+  font-family: avenir next;
+}
+
+.form_map {
+	display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.form-container {
+  margin: 3em;
+  padding: 2em;
+  border-radius: 20px;
+	//display: flex;
+	background-color: white;
+	align-items: center;
+	align-content: center;
+  width: 50%;
+  height: 23em;
+}
+
+//Map
+.map {
+  background-color: white;
+  margin: 3em;
+  padding: 2em;
+  display:flex;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.img {
+  width: 100%;
+  margin-top:10%;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+// Responsive
+
+// Small desktop
+@media screen and (max-width: 1200px) {
+
+}
+
+// Ipad Pro
+@media screen and (max-width: 1024px) {
+  header {
+    margin-bottom: 2em;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+// Ipad
+@media screen and (max-width: 768px) {
+  header {
+    margin-bottom: 1.5em;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 600px) {
+  header {
+    margin-bottom: 1em;
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}

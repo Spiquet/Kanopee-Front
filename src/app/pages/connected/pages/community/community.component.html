@@ -1,0 +1,23 @@
+<app-navbar-connect [user]="user"></app-navbar-connect>
+<div class="container">
+  <h1 *ngIf="user.role === 'user'">Ma communauté</h1>
+  <h1 *ngIf="user.role !== 'user'">Mes communautés</h1>
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-message">
+      <textarea matInput placeholder="Poster un message" formControlName="content"></textarea>
+    </mat-form-field>
+    <button type="submit" [disabled]="!messageForm.valid">Envoyer</button>
+  </form>
+  <mat-card class="messages">
+    <div *ngFor="let message of messages">
+      <div class="icon-comment">
+        <p><i class="fas fa-comments"></i></p>
+        <p> {{message.user.firstName}} </p>
+      </div>
+      <div class="text-comment">
+        <p>{{message.content}}</p>
+        <p class="date"> {{message.createdAt | date: 'd MMM y, H:mm:ss'}} </p>
+      </div>
+    </div>
+  </mat-card>
+</div>

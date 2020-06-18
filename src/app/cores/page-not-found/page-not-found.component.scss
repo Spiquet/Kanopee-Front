@@ -1,0 +1,16 @@
+@import "../../shared/variables.scss";
+
+
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../../assets/images/26957505.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  height: 100vh;
+}
+
+

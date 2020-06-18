@@ -1,0 +1,12 @@
+<mat-card class="questions-card">
+  <h3>Mes questions à Kanopée</h3>
+  <div *ngFor="let question of questions">
+    <app-questions-details class="question-content" [question]="question"></app-questions-details>
+  </div>
+  <div class="container">
+    <div class="button" id="button-5">
+      <div id="translate"></div>
+      <a>Voir la conversation</a>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="header">
+  <h1>
+    Sensibilisez vos collaborateurs
+  </h1>
+</div>
+<h2>NOUS NOUS ADAPTONS À VOTRE PROJET</h2>
+<div class="img">
+  <img alt="" src="../../../../assets/images/sensibilisation.png">
+</div>
+<div class="projet">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="card-title">{{card1.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p> {{card1.p1}} </p>
+      <p> {{card1.p2}} </p>
+      <p> {{card1.p3}} </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="card-title">{{card2.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p> {{card2.p1}} </p>
+      <p> {{card2.p2}} </p>
+      <p> {{card2.p3}} </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title class="card-title">{{card3.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p> {{card3.p1}} </p>
+      <p> {{card3.p2}} </p>
+      <p> {{card3.p3}} </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="container">
+  <div class="button" id="button-5">
+    <div id="translate"></div>
+    <a (click)="redirectToContact()">J'y vais !</a>
+  </div>
+</div>
+

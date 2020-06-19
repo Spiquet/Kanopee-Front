@@ -6,11 +6,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  box-shadow: 6px 6px 6px #c8c8c8;
   position: fixed;
   overflow: hidden;
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
+  z-index: 1;
 
 
 }

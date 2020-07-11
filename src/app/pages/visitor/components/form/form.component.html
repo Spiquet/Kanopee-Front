@@ -25,10 +25,10 @@
         </div>
         <div class="form-group col-5">
 
-          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+          <input type="text" formControlName="objet" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.objet.errors }"
           placeholder="Objet" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Indiquer l'objet de votre message</div>
+          <div *ngIf="submitted && f.objet.errors" class="invalid-feedback">
+            <div *ngIf="f.objet.errors.required">Indiquer l'objet de votre message</div>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
 
   </div>
 
-  
+
 
 
 

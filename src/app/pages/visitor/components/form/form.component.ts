@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SnackbarService } from '../../../../shared/services/snackbar.service';
+import { first } from 'rxjs/operators';
+import { Contact } from '../../../../shared/models/contact';
+import { ContactService } from '../../../../shared/services/contact.service';
 
 @Component({
 
@@ -11,14 +15,17 @@ export class FormComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private snackbar: SnackbarService,
+    private contactService: ContactService
+    ) {}
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
-        title: [ '', Validators.required ],
         firstName: [ '', Validators.required ],
-        lastName: [ '', Validators.required ],
+        objet: [ '', Validators.required ],
         email: [ '', [ Validators.required, Validators.email ] ],
         message: [ '', [ Validators.required ] ],
         acceptTerms: [ false, Validators.requiredTrue ]
@@ -39,10 +46,16 @@ export class FormComponent implements OnInit {
       }
 
       // display form values on success
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4)),
+      this.contactService.postEmail(this.registerForm.value).pipe(first()).subscribe(
+        (data: Contact) => {
+          this.snackbar.openSnackBar(
+            'Votre email a bien été envoyé, nous reviendrons vers vous dans les plus bref délais'
+            );
+          });
     }
 
-    onReset() {
+onReset() {
       this.submitted = false;
       this.registerForm.reset();
     }

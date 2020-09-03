@@ -4,6 +4,7 @@
   <mat-card>
     <mat-card-title>Inscription</mat-card-title>
     <mat-card-content>
+      <!--Link with onSubmit méthode from register.component.ts-->
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
 
@@ -79,6 +80,9 @@
           <mat-error *ngIf="submitted && f.email.errors">
             <span *ngIf="f.email.errors.required">
               Veuillez renseigner votre email.
+            </span>
+            <span *ngIf="f.email.errors.pattern">
+              Veuillez vérifier le format de votre adresse email.
             </span>
           </mat-error>
 

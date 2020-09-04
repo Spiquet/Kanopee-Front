@@ -1,4 +1,5 @@
-<app-navbar-connect [user]='user'></app-navbar-connect>
+<app-navbar-connect [user]="user"></app-navbar-connect>
+
 
 <div>
   <h2>Les prochains ateliers</h2>
@@ -8,6 +9,8 @@
   [workshop]="workshop"
   [site]="site"></app-user-workshop>
 </div>
+
+
 
 <mat-paginator  #paginator
                 [length]="events.length"

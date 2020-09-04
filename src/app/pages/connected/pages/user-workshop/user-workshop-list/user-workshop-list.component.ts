@@ -1,11 +1,11 @@
 import { UserService } from './../../../../../shared/services/user.service';
-import { User } from './../../../../../shared/models/user';
 import { Site } from './../../../../../shared/models/site';
 import { Event } from './../../../../../shared/models/event';
 import { EventService } from './../../../../../shared/services/event.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Workshop } from '../../../../../shared/models/workshop';
 import { PageEvent } from '@angular/material';
+import { User } from '../../../../../shared/models/user';
 
 @Component({
   selector: 'app-user-workshop-list',

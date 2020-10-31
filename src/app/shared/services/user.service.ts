@@ -9,14 +9,16 @@ import { map, tap } from 'rxjs/operators';
 	providedIn: 'root'
 })
 export class UserService {
-	static URL = environment.urlServer + 'users';
-	static basedUrl = environment.urlServer;
+static URL = environment.urlServer + 'users';
+static basedUrl = environment.urlServer;
 
-	user: User;
-	constructor(private http: HttpClient) {}
+user: User;
+constructor(private http: HttpClient) {}
 
-	public connexion(email: string, password: string) {
-		return this.http.post(UserService.basedUrl + 'auth/signin', { email, password }, { observe: 'response' }).pipe(
+	public connexion(email: string, password: string): Observable<any> {
+    return this.http
+    .post(UserService.basedUrl + 'auth/signin', { email, password }, { observe: 'response' })
+    .pipe(
 			map((response: HttpResponse<any>) => {
 				const token = response.headers.get('JWT-TOKEN');
 				localStorage.setItem('TOKEN', token);

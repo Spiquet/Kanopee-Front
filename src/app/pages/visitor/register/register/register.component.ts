@@ -49,19 +49,16 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
     this.loading = true;
     this.userService.inscription(this.registerForm.value).pipe(first()).subscribe(
-      (data) => {
+      () => {
         this.snackbar.openSnackBar(
           'Veuillez valider votre inscription en cliquant sur le lien que vous avez reçu dans votre boite mail'
         );
         this.router.navigate(['/login']);
       },
-      (error) => {
-			// this.alertService.error(error);
-            this.loading = false;
-            this.snackbar.openSnackBar(
-              'Veuillez vérifier la validité de vos informations'
-            );
-      }
+      () => {
+      this.submitted = false;
+      this.loading = false;
+     }
     );
   }
 }

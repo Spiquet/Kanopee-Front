@@ -10,8 +10,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MessageService {
-  constructor(private http: HttpClient,
-    private userService: UserService) { }
+  constructor(private http: HttpClient, private userService: UserService) { }
 
   static URL = environment.urlServer + 'discussions';
 

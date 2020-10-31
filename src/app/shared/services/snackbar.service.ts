@@ -11,7 +11,7 @@ export class SnackbarService {
 
   openSnackBar(message: string, ) {
     this.snackBar.open(message, null, {
-      duration: 2000,
+      duration: 4000,
     });
   }
 

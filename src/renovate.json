@@ -1,0 +1,35 @@
+{
+    "extends": [
+      "config:base"
+    ],
+    "automerge": true,
+    "minor": {
+      "automerge": false
+    },
+    "major": {
+      "automerge": false
+    },
+    "ignorePaths": [
+      "Dockerfile",
+      "docker/package.json"
+    ],
+    "packageRules": [
+      {
+        "packageNames": ["typescript"],
+        "allowedVersions": "<4.3"
+      },
+      {
+        "packageNames": ["zone.js"],
+        "allowedVersions": "<0.12"
+      },
+      {
+        "packageNames": ["tslib"],
+        "allowedVersions": "<3"
+      },
+      {
+        "packageNames": ["@types/node"],
+        "allowedVersions": "<13"
+      }
+    ],
+    "timezone": "Europe/Paris"
+  }

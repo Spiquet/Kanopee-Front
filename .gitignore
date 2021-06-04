@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 node_modules
+=======
+# dependencies
+node_modules
+
+# environnement
+.env
+>>>>>>> feat(renovate-bot): configuration

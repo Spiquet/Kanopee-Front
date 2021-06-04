@@ -45,7 +45,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr.js';
-import { MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PlanningComponent } from './pages/planning/planning.component';
 import { EnvelopComponent } from './components/envelop/envelop.component';
 import { UserWorkshopComponent } from './pages/user-workshop/user-workshop/user-workshop.component';

@@ -25,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { ConsumerComponent } from './consumer/consumer.component';
 import { RegisterComponent } from './register/register/register.component';
-import { MatSnackBarModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [

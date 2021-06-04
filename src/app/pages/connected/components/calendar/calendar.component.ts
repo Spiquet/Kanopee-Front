@@ -15,7 +15,8 @@ import { WorkshopService } from './../../../../shared/services/workshop.service'
 import { colors } from './../header-calendar/color';
 import { CustomDateFormatter } from './custom-date-formatter.provider';
 import { CustomEventTitleFormatter } from './custom-event-title-formatter.provider';
-import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS, PageEvent } from '@angular/material';
+import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { PageEvent } from '@angular/material/paginator';
 
 
 

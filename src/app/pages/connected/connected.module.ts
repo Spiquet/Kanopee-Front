@@ -18,7 +18,17 @@ import { ConnectedRoutingModule } from './connected-routing.module';
 import { NavbarConnectComponent } from './components/navbar-connect/navbar-connect.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
-import { MatChipsModule, MatIconModule, MatSortModule, MatAutocompleteModule, MatMenu, MatMenuModule } from '@angular/material/';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+
+import { MatMenuModule} from '@angular/material/menu'
+
+
+import { MatSortModule} from '@angular/material/sort'
+
+import { MatAutocompleteModule} from '@angular/material/autocomplete'
+
+
 
 import { MessagesListComponent } from './components/messages-list/messages-list.component';
 import { MessagesDetailsComponent } from './components/messages-details/messages-details.component';

@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CustomDateFormatter extends CalendarDateFormatter {
+  // TODO: add explicit constructor
+
   // you can override any of the methods defined in the parent class
   // This file change language in french for all the calandar and change format date
 

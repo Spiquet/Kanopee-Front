@@ -1,8 +1,9 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable, Input, Directive } from '@angular/core';
 import { CalendarEventTitleFormatter, CalendarEvent } from 'angular-calendar';
 import { DatePipe } from '@angular/common';
 
 
+@Directive()
 @Injectable()
 export class CustomEventTitleFormatter extends CalendarEventTitleFormatter {
   @Input() locale = 'fr';

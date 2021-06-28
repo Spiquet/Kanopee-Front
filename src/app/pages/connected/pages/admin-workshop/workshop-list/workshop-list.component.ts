@@ -5,7 +5,7 @@ import { Workshop } from '../../../../../shared/models/workshop';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WorkshopService } from 'src/app/shared/services/workshop.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { PageEvent } from '@angular/material';
+import { PageEvent } from '@angular/material/paginator';
 
 
 

@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class ProductService {
+    constructor() {}
 
-  constructor() { }
-
-  public getProducts(): Product[] {
-    return ProductsMock;
-  }
+    public getProducts(): Product[] {
+        return ProductsMock;
+    }
 }

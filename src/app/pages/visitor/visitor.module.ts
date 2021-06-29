@@ -28,38 +28,38 @@ import { RegisterComponent } from './register/register/register.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [
-    ConceptionComponent,
-    MaintenanceComponent,
-    AccompanimentComponent,
-    ContactComponent,
-    NavbarComponent,
-    HomepageComponent,
-    HomeComponent,
-    FormComponent,
-    FormComponent,
-    LoginComponent,
-    ConsumerComponent,
-    RegisterComponent
-  ],
-  imports: [
-    CommonModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatChipsModule,
-    MatGridListModule,
-    VisitorRoutingModule,
-    MatMenuModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatSnackBarModule
-  ],
-  providers: [],
-  schemas: [NO_ERRORS_SCHEMA]
+    declarations: [
+        ConceptionComponent,
+        MaintenanceComponent,
+        AccompanimentComponent,
+        ContactComponent,
+        NavbarComponent,
+        HomepageComponent,
+        HomeComponent,
+        FormComponent,
+        FormComponent,
+        LoginComponent,
+        ConsumerComponent,
+        RegisterComponent,
+    ],
+    imports: [
+        CommonModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatChipsModule,
+        MatGridListModule,
+        VisitorRoutingModule,
+        MatMenuModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatSnackBarModule,
+    ],
+    providers: [],
+    schemas: [NO_ERRORS_SCHEMA],
 })
-export class VisitorModule { }
+export class VisitorModule {}

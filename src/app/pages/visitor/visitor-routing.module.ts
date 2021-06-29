@@ -12,19 +12,19 @@ import { RegisterComponent } from './register/register/register.component';
 
 // routes définition
 const visiteurRoutes: Routes = [
-	{ path: '', component: HomepageComponent },
-	{ path: 'accueil', component: HomeComponent },
-	{ path: 'conception', component: ConceptionComponent },
-	{ path: 'entretien', component: MaintenanceComponent },
-	{ path: 'accompagnement', component: AccompanimentComponent },
-	{ path: 'services', component: ConsumerComponent },
-	{ path: 'contact', component: ContactComponent },
-	{ path: 'login', component: LoginComponent },
-	{ path: 'register', component: RegisterComponent }
+    { path: '', component: HomepageComponent },
+    { path: 'accueil', component: HomeComponent },
+    { path: 'conception', component: ConceptionComponent },
+    { path: 'entretien', component: MaintenanceComponent },
+    { path: 'accompagnement', component: AccompanimentComponent },
+    { path: 'services', component: ConsumerComponent },
+    { path: 'contact', component: ContactComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(visiteurRoutes) ],
-	exports: [ RouterModule ]
+    imports: [RouterModule.forChild(visiteurRoutes)],
+    exports: [RouterModule],
 })
 export class VisitorRoutingModule {}

@@ -3,13 +3,12 @@ import { Card } from '../models/card';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class CardService {
+    constructor() {}
 
-  constructor() { }
-
-  public getCards(): Card[] {
-    return CardsMock;
-  }
+    public getCards(): Card[] {
+        return CardsMock;
+    }
 }

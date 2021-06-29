@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'pastDate'
+    name: 'pastDate',
 })
 export class PastDatePipe implements PipeTransform {
-
-  transform(value: any, ...args: any[]): any {
-    return null;
-  }
-
+    transform(value: any, ...args: any[]): any {
+        return null;
+    }
 }

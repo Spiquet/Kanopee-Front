@@ -7,29 +7,29 @@ import { AuthentificationService } from '../shared/services/authentification.ser
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-	constructor(
-		private router: Router,
-		private userService: UserService,
-		private authenticationService: AuthentificationService
-	) {}
+    constructor(
+        private router: Router,
+        private userService: UserService,
+        private authenticationService: AuthentificationService,
+    ) {}
 
-	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		// Redirection si l'user n'est pas authentifié
-		return this.userService.getMe().pipe(
-			map((user) => {
-				if (user) {
-					// check if route is restricted by role
-					if (route.data.role && route.data.role.includes(user.role)) {
-						return true;
-					} else {
-						return false;
-					}
-				}
-			}),
-			catchError((error) => {
-				this.router.navigateByUrl('/login');
-				return throwError;
-			})
-		);
-	}
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+        // Redirection si l'user n'est pas authentifié
+        return this.userService.getMe().pipe(
+            map((user) => {
+                if (user) {
+                    // check if route is restricted by role
+                    if (route.data.role && route.data.role.includes(user.role)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }),
+            catchError((error) => {
+                this.router.navigateByUrl('/login');
+                return throwError;
+            }),
+        );
+    }
 }

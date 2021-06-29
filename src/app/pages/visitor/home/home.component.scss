@@ -1,7 +1,8 @@
 @import "../../../shared/variables.scss";
 
 header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../../../../assets/images/home-page.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,34 +11,36 @@ header {
   color: white;
   text-align: center;
   margin-bottom: 2.5em;
+
   .title {
     font-family: amarillo;
   }
 
-  h1{
-    font-size:3rem;
-
+  h1 {
+    font-size: 3rem;
   }
+
   .subtitle {
     font-family: avenir next;
   }
+
   .falkin-letter {
     font-family: falkin;
     font-size: 10rem;
   }
 }
-.img{
+
+.img {
   display: flex;
   justify-content: center;
-  width:100%;
+  width: 100%;
 }
-
-
 
 .presentation {
   width: 90%;
   margin: 0 auto 2em auto;
   font-family: avenir next;
+
   p {
     margin: 1em 0;
     font-weight: bold;
@@ -46,12 +49,13 @@ header {
   }
 }
 
-.projet{
+.projet {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
   font-family: avenir next;
+
   p {
     font-weight: bold;
     text-align: justify;
@@ -61,15 +65,15 @@ header {
   }
 }
 
-.card-title{
-  text-align:center;
+.card-title {
+  text-align: center;
   font-size: 1.8rem;
   padding-bottom: 12%;
   color: rgba(49, 104, 39);
   font-family: avenir next;
 }
 
-.card{
+.card {
   width: 20%;
   padding: 40px;
   border-radius: 20px;
@@ -95,10 +99,10 @@ header {
   width: 170px;
   border: 1px solid $dark-green;
   margin: 20px 20px 20px 20px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -124,7 +128,7 @@ a {
 
 #button-5 a {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
 
 #translate {
@@ -135,7 +139,7 @@ a {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
 
 #button-5:hover #translate {
@@ -143,15 +147,12 @@ a {
 }
 
 #button-5:hover a {
-  color: #2D3142;
+  color: #2d3142;
 }
 
-
-
-
 //Titre de chaque Card
-.card-title{
-  text-align:center;
+.card-title {
+  text-align: center;
   font-size: 1.8rem;
   padding-bottom: 12%;
   color: $dark-green;
@@ -170,191 +171,226 @@ footer {
   align-items: center;
   background-color: $light-green;
   color: white;
-  h1{
-    font-size:2rem;
+
+  h1 {
+    font-size: 2rem;
     text-align: center;
     color: $brown;
     font-family: avenir next;
   }
 
-
-
-hr {
-  border: 0;
+  hr {
+    border: 0;
     height: 1px;
     border-radius: 40%;
     width: 85%;
     background: $brown;
-}
+  }
 
+  // Responsive
 
-// Responsive
+  // Small desktop
+  @media screen and (max-width: 1200px) {
+    .presentation {
+      margin-bottom: 1em;
 
-// Small desktop
-@media screen and (max-width: 1200px) {
-  .presentation {
-    margin-bottom: 1em;
-    p {
-      font-size: 1em;
+      p {
+        font-size: 1em;
+      }
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+    }
+
+    .projet {
+      p {
+        font-weight: 500;
+      }
+    }
+
+    .card {
+      padding: 35px;
+      width: 22%;
+
+      button {
+        font-size: 1.2rem;
+        right: 25%;
+      }
+    }
+
+    footer {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        width: 170px;
+        font-size: 1.3rem;
+      }
     }
   }
-  .card-title {
-    font-size: 1.6rem;
-  }
-  .projet {
-    p {
-      font-weight: 500;
+
+  // Ipad Pro
+  @media screen and (max-width: 1024px) {
+    header {
+      margin-bottom: 2em;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .falkin-letter {
+        font-size: 8rem;
+      }
     }
-  }
-  .card {
-    padding: 35px;
-    width: 22%;
-    button {
-      font-size: 1.2rem;
-      right: 25%;
+
+    .presentation {
+      h2 {
+        font-size: 1.2em;
+      }
     }
-  }
-  footer {
-    h1 {
+
+    .card-title {
       font-size: 1.5rem;
     }
-    button {
-      width: 170px;
-      font-size: 1.3rem;
-    }
-  }
-}
 
-// Ipad Pro
-@media screen and (max-width: 1024px) {
-  header {
-    margin-bottom: 2em;
-    h1 {
-      font-size: 2.5rem;
+    .card {
+      width: 24%;
+      padding: 30px;
+
+      button {
+        font-size: 1rem;
+        right: 32%;
+      }
     }
-    .falkin-letter {
-      font-size: 8rem;
-    }
-  }
-  .presentation {
-    h2 {
-      font-size: 1.2em;
-    }
-  }
-  .card-title {
-    font-size: 1.5rem;
-  }
-  .card {
-    width: 24%;
-    padding: 30px;
-    button {
-      font-size: 1rem;
-      right: 32%;
+
+    footer {
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      button {
+        width: 140px;
+        font-size: 1.2rem;
+      }
     }
   }
-  footer {
-    h1 {
-      font-size: 1.3rem;
+
+  // Ipad
+  @media screen and (max-width: 768px) {
+    header {
+      margin-bottom: 1.5em;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .falkin-letter {
+        font-size: 5rem;
+      }
     }
-    button {
-      width: 140px;
+
+    .presentation {
+      h2 {
+        font-size: 1em;
+      }
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+
+    .card {
+      width: 28%;
+      padding: 20px;
+
+      button {
+        font-size: 0.8em;
+        right: 30%;
+      }
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+    }
+
+    footer {
+      h1 {
+        font-size: 1rem;
+      }
+
+      button {
+        width: 120px;
+        font-size: 1rem;
+        height: 30px;
+      }
+    }
+  }
+
+  // Mobile
+  @media screen and (max-width: 600px) {
+    header {
+      margin-bottom: 1em;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .falkin-letter {
+        font-size: 3rem;
+      }
+    }
+
+    .presentation {
+      h2 {
+        font-size: 0.8em;
+      }
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+
+    .projet {
+      flex-direction: column;
+
+      p {
+        margin: 1%;
+      }
+    }
+
+    .card {
+      width: 90%;
+      padding: 20px;
+
+      button {
+        font-size: 0.8em;
+        right: 40%;
+        bottom: 4%;
+      }
+    }
+
+    .card-title {
       font-size: 1.2rem;
+      padding-bottom: 3%;
+    }
+
+    .card-content {
+      padding-bottom: 2%;
+    }
+
+    footer {
+      h1 {
+        font-size: 0.8rem;
+      }
+
+      button {
+        width: 100px;
+        font-size: 0.8rem;
+        height: 28px;
+        padding: 0;
+      }
     }
   }
 }
-
-// Ipad
-@media screen and (max-width: 768px) {
-  header {
-    margin-bottom: 1.5em;
-    h1 {
-      font-size: 2rem;
-    }
-    .falkin-letter {
-      font-size: 5rem;
-    }
-  }
-  .presentation {
-    h2 {
-      font-size: 1em;
-    }
-    p {
-      font-size: 0.8em;
-    }
-  }
-  .card {
-    width: 28%;
-    padding: 20px;
-    button {
-      font-size: 0.8em;
-      right: 30%;
-    }
-  }
-  .card-title {
-    font-size: 1.4rem;
-  }
-  footer {
-    h1 {
-      font-size: 1rem;
-    }
-    button {
-      width: 120px;
-      font-size: 1rem;
-      height: 30px;
-    }
-  }
-}
-
-// Mobile
-@media screen and (max-width: 600px) {
-  header {
-    margin-bottom: 1em;
-    h1 {
-      font-size: 1.5rem;
-    }
-    .falkin-letter {
-      font-size: 3rem;
-    }
-  }
-  .presentation {
-    h2 {
-      font-size: 0.8em;
-    }
-    p {
-      font-size: 0.8em;
-    }
-  }
-  .projet {
-    flex-direction: column;
-    p {
-      margin: 1%;
-    }
-  }
-  .card {
-    width: 90%;
-    padding: 20px;
-    button {
-      font-size: 0.8em;
-      right: 40%;
-      bottom: 4%;
-    }
-  }
-  .card-title {
-    font-size: 1.2rem;
-    padding-bottom: 3%;
-  }
-  .card-content {
-    padding-bottom: 2%;
-  }
-  footer {
-    h1 {
-      font-size: 0.8rem;
-    }
-    button {
-      width: 100px;
-      font-size: 0.8rem;
-      height: 28px;
-      padding: 0;
-    }
-  }
-}}

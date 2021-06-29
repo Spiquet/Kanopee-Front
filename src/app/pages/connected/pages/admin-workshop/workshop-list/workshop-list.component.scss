@@ -5,14 +5,14 @@
   justify-content: center;
   align-items: center;
   font-family: avenir-next;
-  width:100%;
-
+  width: 100%;
 }
-.header_title{
-  width:82%;
 
+.header_title {
+  width: 82%;
 }
-h2{
+
+h2 {
   font-size: 3rem;
 }
 
@@ -25,10 +25,10 @@ h2{
   width: 170px;
   border: 1px solid $dark-green;
   margin: 20px 20px 20px 20px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -54,7 +54,7 @@ a {
 
 #button-5 a {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
 
 #translate {
@@ -65,7 +65,7 @@ a {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
 
 #button-5:hover #translate {
@@ -73,19 +73,19 @@ a {
 }
 
 #button-5:hover a {
-  color: #2D3142;
+  color: #2d3142;
 }
-
 
 .mat-form-field {
   display: flex;
   justify-content: center;
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width: 1000px) {
   h1 {
     font-size: 2.2em;
   }
+
   #container {
     width: 50%;
   }
@@ -94,8 +94,6 @@ a {
 .searchBar {
   width: 90%;
 }
-
-
 
 //   // Responsive
 
@@ -110,4 +108,3 @@ a {
 //     font-size: 1em;
 //   }
 // }
-

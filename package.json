@@ -8,6 +8,8 @@
     "test": "ng test",
     "e2e": "ng e2e",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
+    "stylelint": "stylelint \"**/*.scss\" -o stylelint.log",
+    "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "prepare": "husky install"
   },
   "private": true,
@@ -64,6 +66,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^22.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "~4.2.4"

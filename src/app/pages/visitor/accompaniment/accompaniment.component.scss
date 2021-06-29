@@ -2,11 +2,11 @@
 
 //VERSION DESKTOP
 
-
 //Header
-.header{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-  url('/../assets/images/Jardins25.jpg');
+.header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('/../assets/images/Jardins25.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,8 +17,8 @@
 }
 
 h1 {
-  color:white;
-  text-align:center;
+  color: white;
+  text-align: center;
   margin: 0 auto;
   font-family: avenir next;
   font-size: 3rem;
@@ -38,8 +38,8 @@ h2 {
 }
 
 iframe {
-  width:500px;
-  height:250px;
+  width: 500px;
+  height: 250px;
 }
 
 .cta {
@@ -48,11 +48,12 @@ iframe {
 }
 
 //Div englobant les cards
-.projet{
+.projet {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
+
   p {
     font-weight: bold;
     text-align: justify;
@@ -62,15 +63,15 @@ iframe {
   }
 }
 
-.card-title{
-  text-align:center;
+.card-title {
+  text-align: center;
   font-size: 1.8rem;
   padding-bottom: 12%;
   color: rgba(49, 104, 39);
   font-family: avenir next;
 }
 
-.card{
+.card {
   width: 20%;
   padding: 40px;
   border-radius: 20px;
@@ -96,10 +97,10 @@ iframe {
   width: 170px;
   border: 1px solid $dark-green;
   margin: 20px 20px 20px 20px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -125,7 +126,7 @@ a {
 
 #button-5 a {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
 
 #translate {
@@ -136,7 +137,7 @@ a {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
 
 #button-5:hover #translate {
@@ -144,31 +145,34 @@ a {
 }
 
 #button-5:hover a {
-  color: #2D3142;
+  color: #2d3142;
 }
-
 
 // Responsive
 
 // Small desktop
 @media screen and (max-width: 1200px) {
   iframe {
-    width:450px;
-    height:225px;
+    width: 450px;
+    height: 225px;
   }
+
   .card-title {
     font-size: 1.6rem;
     font-family: avenir next;
   }
+
   .projet {
     p {
       font-weight: 500;
       font-family: avenir next;
     }
   }
+
   .card {
     padding: 35px;
     width: 22%;
+
     button {
       font-size: 1.2rem;
       right: 25%;
@@ -181,23 +185,29 @@ a {
 @media screen and (max-width: 1024px) {
   header {
     margin-bottom: 2em;
+
     h1 {
       font-size: 2.5rem;
     }
   }
-    h2 {
-      font-size: 1.2em;
-    }
-    iframe {
-      width:400px;
-      height:200px;
-    }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  iframe {
+    width: 400px;
+    height: 200px;
+  }
+
   .card-title {
     font-size: 1.5rem;
   }
+
   .card {
     width: 24%;
     padding: 30px;
+
     button {
       font-size: 1rem;
       right: 32%;
@@ -209,29 +219,36 @@ a {
 @media screen and (max-width: 768px) {
   header {
     margin-bottom: 1.5em;
+
     h1 {
       font-size: 2rem;
     }
   }
-    h2 {
-      font-size: 1em;
-    }
-    iframe {
-      width:250px;
-      height:125px;
-    }
-    button {
-      font-size: 1.5em;
-      padding: 10px;
-    }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  iframe {
+    width: 250px;
+    height: 125px;
+  }
+
+  button {
+    font-size: 1.5em;
+    padding: 10px;
+  }
+
   .card {
     width: 28%;
     padding: 20px;
+
     button {
       font-size: 0.8em;
       right: 30%;
     }
   }
+
   .card-title {
     font-size: 1.4rem;
   }
@@ -241,41 +258,52 @@ a {
 @media screen and (max-width: 600px) {
   header {
     margin-bottom: 1em;
+
     h1 {
       font-size: 1.5rem;
     }
   }
-    h2 {
-      font-size: 0.8em;
-    }
-    .youtube-video {
-      display: none;
-    }
-    .video-cta {
-      margin-bottom: 1em;
-    }
-    button {
-      font-size: 1.3em;
-    }
+
+  h2 {
+    font-size: 0.8em;
+  }
+
+  .youtube-video {
+    display: none;
+  }
+
+  .video-cta {
+    margin-bottom: 1em;
+  }
+
+  button {
+    font-size: 1.3em;
+  }
+
   .projet {
     flex-direction: column;
+
     p {
       margin: 1%;
     }
   }
+
   .card {
     width: 90%;
     padding: 20px;
+
     button {
       font-size: 0.8em;
       right: 40%;
       bottom: 4%;
     }
   }
+
   .card-title {
     font-size: 1.2rem;
     padding-bottom: 3%;
   }
+
   .card-content {
     padding-bottom: 2%;
   }

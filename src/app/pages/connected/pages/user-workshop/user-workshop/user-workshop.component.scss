@@ -9,10 +9,10 @@
   width: 170px;
   border: 1px solid $dark-green;
   margin: 20px 20px 20px 20px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@ a {
 
 #button-5 a {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
 
 #translate {
@@ -49,7 +49,7 @@ a {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
 
 #button-5:hover #translate {
@@ -57,5 +57,5 @@ a {
 }
 
 #button-5:hover a {
-  color: #2D3142;
+  color: #2d3142;
 }

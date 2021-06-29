@@ -1,6 +1,6 @@
 @import "../../../../shared/variables.scss";
 
-/*-----------------------------------------CSS CALENDAR-------------------------------------------------------*/
+/* -----------------------------------------CSS CALENDAR------------------------------------------------------- */
 
 .titleDate {
   margin: 19px;
@@ -10,7 +10,7 @@
   font-family: avenir-next;
 }
 
-.positionBtn{
+.positionBtn {
   display: flex;
   justify-content: space-around;
 }
@@ -52,7 +52,7 @@
 
 pre {
   background: white;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 -5px 20px 0 rgba(0,0,0,.14), 0 2px 3px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.14), 0 2px 3px 0 rgba(0, 0, 0, 0.12);
   text-align: center;
   white-space: pre-line;
   border-radius: 15px;
@@ -68,7 +68,7 @@ pre {
 }
 
 
-/*---------------------------------------------Button Styles--------------------------------------------------- */
+/* ---------------------------------------------Button Styles--------------------------------------------------- */
 .button {
   border-radius: 15%;
   display: inline-flex;
@@ -76,10 +76,10 @@ pre {
   width: 191px;
   border: 1px solid $dark-green;
   margin: 20px 20px 20px 20px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -101,16 +101,18 @@ pre {
 
 
 
-/*----------------------------------------------- Fifth Button -----------------------------------------------------*/
+/* ----------------------------------------------- Fifth Button ----------------------------------------------------- */
 #button-5 {
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
+
 #button-5 .paragrapheBtn {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
+
 #translate {
   transform: rotate(50deg);
   width: 100%;
@@ -119,20 +121,21 @@ pre {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
+
 #button-5:hover #translate {
   left: 0;
 }
 
 #button-5:hover .paragrapheBtn mat-select mat-label {
-  color: #2D3142;
+  color: #2d3142;
 }
 
 
 
 
-/*------------------------------------------POPUP ADD DESCRIPTION---------------------------------------------------*/
+/* ------------------------------------------POPUP ADD DESCRIPTION--------------------------------------------------- */
 
 .popupAddDescriptionEvent {
   background: transparent;
@@ -158,7 +161,7 @@ pre {
   padding: 2%;
   border-radius: 15px;
   font-family: avenir-next;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 -5px 20px 0 rgba(0,0,0,.14), 0 2px 3px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.14), 0 2px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 .popupEventDisable {
@@ -174,16 +177,17 @@ pre {
 
 
 
-/*------------------------------------------POPUP ADD EVENT---------------------------------------------------*/
+/* ------------------------------------------POPUP ADD EVENT--------------------------------------------------- */
 
 .btnEdit {
   background: transparent;
-    border: none;
+  border: none;
 }
 
 mat-label {
   color: $brown;
 }
+
 mat-select {
   color: $brown;
   font-family: avenir-next;
@@ -204,6 +208,7 @@ mat-select {
 .btnAddDescription {
   margin-left: -2%;
 }
+
 .intoPopupEvent {
   background: white;
   position: fixed;
@@ -211,10 +216,11 @@ mat-select {
   padding: 2%;
   border-radius: 15px;
   overflow-y: auto;
-    max-height: 85%;
+  max-height: 85%;
   width: 85%;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 -5px 20px 0 rgba(0,0,0,.14), 0 2px 3px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 -5px 20px 0 rgba(0, 0, 0, 0.14), 0 2px 3px 0 rgba(0, 0, 0, 0.12);
 }
+
 .popupCreateEvent {
   background: transparent;
   visibility: visible;
@@ -228,6 +234,7 @@ mat-select {
   border-radius: 15px;
   font-family: avenir-next;
 }
+
 .optionInPopup {
   margin: 0 0 10px;
   display: flex;
@@ -253,7 +260,7 @@ mat-select {
 
 
 
-/*-------------------------------------------------- OTHER -------------------------------------------------------*/
+/* -------------------------------------------------- OTHER ------------------------------------------------------- */
 
 .discussion {
   display: flex;
@@ -262,11 +269,9 @@ mat-select {
 }
 
 
-/*-------------------------------------------------- RESPONSIVE -------------------------------------------------------*/
-
+/* -------------------------------------------------- RESPONSIVE ------------------------------------------------------- */
 
 @media (min-width: 769px) and (max-width: 1000px) {
-
 
 }
 
@@ -286,7 +291,7 @@ mat-select {
   }
 
   h3 {
-    margin: 0px 44px 10px;
+    margin: 0 44px 10px;
     width: 135%;
   }
 

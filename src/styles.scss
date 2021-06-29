@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html,
+body { height: 100%; }
 
-body { background-color: rgb(245, 247, 244); margin: 0; font-family: avenirNext, Roboto, "Helvetica Neue", sans-serif; color: #523603}
+body { background-color: rgb(245, 247, 244); margin: 0; font-family: avenirNext, Roboto, "Helvetica Neue", sans-serif; color: #523603; }
 
 @font-face {
   font-family: avenirNext;
@@ -18,5 +19,3 @@ body { background-color: rgb(245, 247, 244); margin: 0; font-family: avenirNext,
   font-family: falkin;
   src: url(assets/fonts/FalkinSansPERSONAL.ttf) format("opentype");
 }
-
-

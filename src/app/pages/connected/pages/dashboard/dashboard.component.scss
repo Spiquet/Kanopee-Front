@@ -1,21 +1,21 @@
 @import "../../../../shared/variables.scss";
 
 .container {
- width: 90%;
- margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 // Banière
 .content-container {
-	background-color: $light-green;
-	display: block;
-	border: none;
-	padding: 0;
-	margin: 0;
-	height: 100px;
-	font-size: 20px;
-	color: honeydew;
-	text-align: center;
-	line-height: 100px;
+  background-color: $light-green;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 100px;
+  font-size: 20px;
+  color: honeydew;
+  text-align: center;
+  line-height: 100px;
 }
 
 // Boutton
@@ -35,10 +35,10 @@
   width: 170px;
   border: 1px solid $dark-green;
   margin: 20px 20px 20px 20px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -65,7 +65,7 @@ a {
 
 #button-5 a {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
 
 #translate {
@@ -76,7 +76,7 @@ a {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
 
 #button-5:hover #translate {
@@ -84,9 +84,8 @@ a {
 }
 
 #button-5:hover a {
-  color: #2D3142;
+  color: #2d3142;
 }
-
 
 .discussion {
   display: flex;
@@ -111,24 +110,28 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   h1 {
     color: white;
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
 .product1 {
-  background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
-  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  background-image:
+    url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
 .product2 {
-  background-image: url('https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
-  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  background-image:
+    url('https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
 .product3 {
-  background-image: url('https://images.unsplash.com/photo-1561136594-7f68413baa99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
-  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  background-image:
+    url('https://images.unsplash.com/photo-1561136594-7f68413baa99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }

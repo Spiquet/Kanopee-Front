@@ -27,6 +27,7 @@ export class SearchBarComponent implements OnInit {
         return this.options.filter((option) => option.toLowerCase().includes(filterValue));
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     displayFn(subject: any): void {
         return subject ? subject.name : undefined;
     }

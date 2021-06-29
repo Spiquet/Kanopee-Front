@@ -14,9 +14,8 @@ export class SearchBarComponent implements OnInit {
 
     myControl = new FormControl();
     filteredOptions: Observable<string[]>;
-    constructor() {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.filteredOptions = this.myControl.valueChanges.pipe(
             startWith(''),
             map((value) => this._filter(value)),
@@ -28,7 +27,7 @@ export class SearchBarComponent implements OnInit {
         return this.options.filter((option) => option.toLowerCase().includes(filterValue));
     }
 
-    displayFn(subject) {
+    displayFn(subject: any): void {
         return subject ? subject.name : undefined;
     }
 }

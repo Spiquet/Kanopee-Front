@@ -1,5 +1,5 @@
 import { UserService } from './shared/services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,11 +7,9 @@ import { Router } from '@angular/router';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'kanopeeApp';
 
     router: string;
     constructor(private userService: UserService, private _router: Router) {}
-
-    ngOnInit() {}
 }

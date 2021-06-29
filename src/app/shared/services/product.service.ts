@@ -6,8 +6,6 @@ import { Product } from '../models/product';
     providedIn: 'root',
 })
 export class ProductService {
-    constructor() {}
-
     public getProducts(): Product[] {
         return ProductsMock;
     }

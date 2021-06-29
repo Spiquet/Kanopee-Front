@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class HeaderInterceptor implements HttpInterceptor {
-    constructor() {}
-
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<any>> {
         const token = localStorage.getItem('TOKEN');
         if (!token) {
             return next.handle(req);

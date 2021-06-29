@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'userRole',
 })
 export class UserRolePipe implements PipeTransform {
-    transform(value): {} {
+    transform(value: any): Record<string, any> {
         return Object.keys(value)
             .filter((e) => e)
             .map((val) => {

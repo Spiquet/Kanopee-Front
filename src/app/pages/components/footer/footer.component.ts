@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -6,15 +6,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
     submitted = false;
-    constructor() {}
 
     newsLetterMail = new FormGroup({
         email: new FormControl('', [Validators.required]),
     });
-
-    ngOnInit() {}
-
-    onSubmit() {}
 }

@@ -5,19 +5,18 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../../shared/models/product';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+    selector: 'app-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  @Input() user: User;
-  products: Product[];
+    @Input() user: User;
+    products: Product[];
 
-  constructor(private userService: UserService, private productService: ProductService) { }
+    constructor(private userService: UserService, private productService: ProductService) {}
 
-  ngOnInit(): void {
-    this.user = this.userService.user;
-    this.products = this.productService.getProducts();
-  }
-
+    ngOnInit(): void {
+        this.user = this.userService.user;
+        this.products = this.productService.getProducts();
+    }
 }

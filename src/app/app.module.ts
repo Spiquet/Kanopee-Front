@@ -21,40 +21,31 @@ import { PastDatePipe } from './shared/pipe/past-date.pipe';
 
 import { RolePermissionDirective } from './shared/directive/role-permission.directive';
 
-
-
 @NgModule({
+    declarations: [FooterComponent, AppComponent, PageNotFoundComponent, PastDatePipe, RolePermissionDirective],
 
-  declarations: [
-    FooterComponent,
-    AppComponent,
-    PageNotFoundComponent,
-    PastDatePipe,
-    RolePermissionDirective,
-   ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSnackBarModule,
+        MatFormFieldModule,
+        NoopAnimationsModule,
+        HttpClientModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        NgbModule,
+        MatIconModule,
+        MatDialogModule,
+        AppRoutingModule,
+    ],
 
-	imports: [
-		BrowserModule,
-    BrowserAnimationsModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-		NoopAnimationsModule,
-    HttpClientModule,
-    MatInputModule,
-		ReactiveFormsModule,
-		NgbModule,
-		MatIconModule,
-		MatDialogModule,
-		AppRoutingModule,
-	],
-
-	providers: [
-		{
-			provide: HTTP_INTERCEPTORS,
-			useClass: HeaderInterceptor,
-			multi: true
-		}
-	],
-	bootstrap: [ AppComponent ]
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: HeaderInterceptor,
+            multi: true,
+        },
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

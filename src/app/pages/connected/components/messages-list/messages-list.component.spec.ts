@@ -3,23 +3,24 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MessagesListComponent } from './messages-list.component';
 
 describe('MessagesListComponent', () => {
-  let component: MessagesListComponent;
-  let fixture: ComponentFixture<MessagesListComponent>;
+    let component: MessagesListComponent;
+    let fixture: ComponentFixture<MessagesListComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MessagesListComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(
+        waitForAsync(() => {
+            TestBed.configureTestingModule({
+                declarations: [MessagesListComponent],
+            }).compileComponents();
+        }),
+    );
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MessagesListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(MessagesListComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

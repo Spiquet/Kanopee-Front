@@ -4,7 +4,6 @@ import { WorkshopFormsComponent } from './pages/admin-workshop/workshop-forms/wo
 import { WorkshopListComponent } from './pages/admin-workshop/workshop-list/workshop-list.component';
 import { WorkshopComponent } from './pages/admin-workshop/workshop/workshop.component';
 
-
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,14 +20,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 
-import { MatMenuModule} from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
 
+import { MatSortModule } from '@angular/material/sort';
 
-import { MatSortModule} from '@angular/material/sort'
-
-import { MatAutocompleteModule} from '@angular/material/autocomplete'
-
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { MessagesListComponent } from './components/messages-list/messages-list.component';
 import { MessagesDetailsComponent } from './components/messages-details/messages-details.component';
@@ -69,71 +65,70 @@ import { UserRolePipe } from './../../shared/pipe/user-role.pipe';
 flatpickr.localize(French);
 
 @NgModule({
-  declarations: [
-    NavbarConnectComponent,
-    DashboardComponent,
-    MessagesListComponent,
-    MessagesDetailsComponent,
-    WorkshopComponent,
-    WorkshopFormsComponent,
-    WorkshopListComponent,
-    CalendarComponent,
-    HeaderCalendarComponent,
-    QuestionsDetailsComponent,
-    QuestionsListComponent,
-    CalendarComponent,
-    HeaderCalendarComponent,
-    PlanningComponent,
-    EnvelopComponent,
-    AdminModerationComponent,
-    UserWorkshopComponent,
-    UserWorkshopListComponent,
-    ProductComponent,
-    CommunityComponent,
-    UserRolePipe,
-    SearchBarComponent,
-  ],
+    declarations: [
+        NavbarConnectComponent,
+        DashboardComponent,
+        MessagesListComponent,
+        MessagesDetailsComponent,
+        WorkshopComponent,
+        WorkshopFormsComponent,
+        WorkshopListComponent,
+        CalendarComponent,
+        HeaderCalendarComponent,
+        QuestionsDetailsComponent,
+        QuestionsListComponent,
+        CalendarComponent,
+        HeaderCalendarComponent,
+        PlanningComponent,
+        EnvelopComponent,
+        AdminModerationComponent,
+        UserWorkshopComponent,
+        UserWorkshopListComponent,
+        ProductComponent,
+        CommunityComponent,
+        UserRolePipe,
+        SearchBarComponent,
+    ],
 
+    imports: [
+        CommonModule,
+        MatSelectModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatChipsModule,
+        MatAutocompleteModule,
+        MatSortModule,
+        MatCardModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatRadioModule,
+        MatProgressSpinnerModule,
+        ConnectedRoutingModule,
+        NgSelectModule,
+        NgbModalModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+        FormsModule,
+        FlatpickrModule.forRoot(),
+        CalendarModule.forRoot({
+            provide: DateAdapter,
+            useFactory: adapterFactory,
+        }),
+    ],
 
-  imports: [
-    CommonModule,
-    MatSelectModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatChipsModule,
-    MatAutocompleteModule,
-    MatSortModule,
-    MatCardModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatRadioModule,
-    MatProgressSpinnerModule,
-    ConnectedRoutingModule,
-    NgSelectModule,
-    NgbModalModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatMenuModule,
-    FormsModule,
-    FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    })
-  ],
-
-  providers: [
-    {
-      provide: MatDialogRef,
-      useValue: {}
-    }
-  ],
-  bootstrap: [CalendarComponent],
-  entryComponents: [WorkshopFormsComponent]
+    providers: [
+        {
+            provide: MatDialogRef,
+            useValue: {},
+        },
+    ],
+    bootstrap: [CalendarComponent],
+    entryComponents: [WorkshopFormsComponent],
 })
-export class ConnectedModule { }
+export class ConnectedModule {}

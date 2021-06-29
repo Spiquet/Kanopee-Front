@@ -1,10 +1,6 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appRolePermission]'
+    selector: '[appRolePermission]',
 })
-export class RolePermissionDirective {
-
-  constructor() { }
-
-}
+export class RolePermissionDirective {}

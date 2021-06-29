@@ -15,7 +15,6 @@ p {
 
 .form-message {
   width: 50%;
-
 }
 
 button {
@@ -24,17 +23,14 @@ button {
   padding: 8px;
   color: white;
   font-weight: bold;
-  text-align:center;
+  text-align: center;
   font-size: 1.1rem;
   border: 1px solid $light-green;
-
   margin: 0 10px;
 }
 
 button:hover {
-
   background-color: $light-green;
-
 }
 
 .messages {

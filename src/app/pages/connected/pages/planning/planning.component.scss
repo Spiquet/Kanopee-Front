@@ -1,26 +1,26 @@
 @import "../../../../shared/variables.scss";
 
 #navbar-container {
-	width: 100%;
-	height: 4em;
-	background-color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 100%;
+  height: 4em;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 6px 6px 6px #c8c8c8;
   margin-bottom: 3em;
 }
 
 li {
-	display: inline;
-	margin: 0.5em;
+  display: inline;
+  margin: 0.5em;
 }
 
 a {
-	text-decoration: none;
-	font-size: 1.2rem;
-	font-weight: bold;
-	color: $brown;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $brown;
 }
 
 a:hover {
@@ -37,7 +37,7 @@ button {
   padding: 8px;
   color: $dark-green;
   font-weight: bold;
-  text-align:center;
+  text-align: center;
   font-size: 1.1rem;
   border: 1px solid $pink;
   margin: 0 10px;
@@ -47,18 +47,18 @@ button:hover {
   background-color: $light-green;
 }
 
-
 // Responsive
 
 @media screen and (max-width: 1200px) {
   #navbar-container {
     height: 3em;
   }
+
   a {
     font-size: 1em;
   }
-.btn {
+
+  .btn {
     font-size: 1em;
   }
 }
-

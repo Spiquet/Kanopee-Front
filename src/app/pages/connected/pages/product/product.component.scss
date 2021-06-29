@@ -22,10 +22,10 @@
   width: 170px;
   border: 1px solid $dark-green;
   margin: 10px 10px 10px 10px;
-  color: #BFC0C0;
+  color: #bfc0c0;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 1.5px;
   align-items: center;
   justify-content: center;
@@ -52,7 +52,7 @@ a {
 
 #button-5 a {
   position: relative;
-  transition: all .45s ease-Out;
+  transition: all 0.45s ease-out;
 }
 
 #translate {
@@ -63,7 +63,7 @@ a {
   top: -30px;
   background: $light-green;
   position: absolute;
-  transition: all .3s ease-Out;
+  transition: all 0.3s ease-out;
 }
 
 #button-5:hover #translate {
@@ -71,7 +71,7 @@ a {
 }
 
 #button-5:hover a {
-  color: #2D3142;
+  color: #2d3142;
 }
 
 // carte des produits
@@ -81,6 +81,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .card {
   color: $brown;
   width: 45%;
@@ -96,6 +97,7 @@ a {
     border-radius: 4px;
     box-shadow: 1px 1px 1px rgb(115, 115, 116);
   }
+
   display: flex;
   align-items: center;
 }
@@ -120,6 +122,7 @@ a {
 .prices {
   display: flex;
   justify-content: space-between;
+
   p {
     margin-right: 2em;
     margin-bottom: 0;

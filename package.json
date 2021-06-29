@@ -8,7 +8,16 @@
     "test": "ng test",
     "e2e": "ng e2e",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix"
-
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -55,6 +64,7 @@
     "@types/jasminewd2": "^2.0.9",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "husky": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.3",

@@ -3,9 +3,10 @@ import { SnackbarService } from './../../../shared/services/snackbar.service';
 import { User } from './../../../shared/models/user';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { UserRole } from './../../../shared/enum/user-role.enum';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
         private snackbar: SnackbarService,
     ) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required],
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
     }
 
     // convenience getter for easy access to form fields
-    get f() {
+    get f(): { [key: string]: AbstractControl } {
         return this.loginForm.controls;
     }
 

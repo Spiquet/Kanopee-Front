@@ -60,6 +60,7 @@
     "husky": "6.0.0",
     "jest": "27.0.6",
     "protractor": "7.0.0",
+    "scuri": "1.0.7",
     "stylelint": "13.13.1",
     "stylelint-config-sass-guidelines": "8.0.0",
     "stylelint-config-standard": "22.0.0",

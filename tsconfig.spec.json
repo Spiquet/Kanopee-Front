@@ -5,7 +5,10 @@
     "types": [
       "jest",
       "node"
-    ]
+    ],
+    "path": {
+      "autoSpy":["./src/tests/auto-spy"]
+    }
   },
   "files": [
     "src/test.ts",

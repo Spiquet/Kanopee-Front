@@ -13,7 +13,7 @@ export class AuthentificationService {
 
     constructor(private http: HttpClient, private userService: UserService) {}
 
-    public login(email: string, password: string): Observable<any> {
+    public login(email: string, password: string): Observable<string> {
         return this.http
             .post(AuthentificationService.URL + 'signin', { email, password }, { observe: 'response' })
             .pipe(
@@ -27,7 +27,7 @@ export class AuthentificationService {
             );
     }
 
-    logout() {
+    public logout(): void {
         localStorage.clear();
     }
 }

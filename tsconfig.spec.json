@@ -6,13 +6,13 @@
       "jest",
       "node"
     ],
-    "path": {
+    "emitDecoratorMetadata": true,
+    "paths": {
       "autoSpy":["./src/tests/auto-spy"]
     }
   },
   "files": [
-    "src/test.ts",
-    "src/polyfills.ts"
+    "polyfills.ts"
   ],
   "include": [
     "src/**/*.spec.ts",

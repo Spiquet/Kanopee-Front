@@ -1,28 +1,41 @@
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { AuthentificationService } from './../../../shared/services/authentification.service';
 import { SnackbarService } from './../../../shared/services/snackbar.service';
 import { LoginComponent } from './login.component';
 import { autoSpy } from 'autoSpy';
+import { render } from '@testing-library/angular';
 
 describe('LoginComponent', () => {
-    it('when ngOnInit is called it should', () => {
+    it('should render the form', async () => {
+        await render(LoginComponent, {
+            // imports: [ReactiveFormsModule],
+        });
         // arrange
-        const { build } = setup().default();
-        const l = build();
+
         // act
-        l.ngOnInit();
+        // const auth = authenticationService.login(testValues);
         // assert
-        // expect(l).toEqual
+        //expect(auth).toEqual(email);
     });
-    it('when onSubmit is called it should', () => {
+    xit('when onSubmit is called it should', () => {
         // arrange
-        const { build } = setup().default();
-        const l = build();
+        const { build, authenticationService } = setup().default();
+        const LoginComponent = build();
+
+        const testValues = {
+            username: 'FOO',
+            password: 'BAZ',
+            handleSubmit: jest.fn(),
+        };
+
         // act
-        l.onSubmit();
+        //LoginComponent.onSubmit();
         // assert
+        expect(testValues.handleSubmit).toHaveBeenCalledTimes(1);
+        expect(testValues.handleSubmit).toHaveBeenCalledTimes(1);
+        expect(authenticationService.login).toBeCalled();
         // expect(l).toEqual
     });
 });

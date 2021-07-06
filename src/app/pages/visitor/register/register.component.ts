@@ -1,11 +1,11 @@
-import { UserService } from './../../../../shared/services/user.service';
-import { User } from './../../../../shared/models/user';
-import { SnackbarService } from './../../../../shared/services/snackbar.service';
+import { UserService } from '../../../shared/services/user.service';
+import { User } from '../../../shared/models/user';
+import { SnackbarService } from '../../../shared/services/snackbar.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { MustMatch } from './../../../../shared/validator/must-match.validator';
+import { MustMatch } from '../../../shared/validator/must-match.validator';
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',

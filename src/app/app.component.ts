@@ -1,6 +1,4 @@
-import { UserService } from './shared/services/user.service';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -10,6 +8,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
     title = 'kanopeeApp';
 
-    router: string;
-    constructor(private userService: UserService, private _router: Router) {}
+    // router: string;
+    // constructor(private userService: UserService, private _router: Router) {}
 }

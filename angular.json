@@ -85,16 +85,7 @@
 				},
 				"test": {
 					"builder": "@angular-builders/jest:run",
-					"options": {
-						"polyfills": "src/polyfills.ts",
-						"tsConfig": "tsconfig.spec.json",
-						"assets": [ "src/favicon.ico", "src/assets" ],
-						"styles": [
-							"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-							"src/styles.scss"
-						],
-						"scripts": []
-					}
+					"options": {}
 				},
 				"lint": {
 					"builder": "@angular-devkit/build-angular:tslint",

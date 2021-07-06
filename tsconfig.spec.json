@@ -12,7 +12,7 @@
     }
   },
   "files": [
-    "polyfills.ts"
+    "src/polyfills.ts"
   ],
   "include": [
     "src/**/*.spec.ts",
